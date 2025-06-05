@@ -42,7 +42,10 @@ for folder, label in folders_and_labels:
 
 logger.info(f"Extracted {len(all_data)} rows of data")
 # Save to CSV
-csv_path = os.path.join(os.path.dirname(__file__), '..', 'aclImdb_reviews.csv')
+# Ensure the data directory exists
+csv_dir = os.path.join(os.path.dirname(__file__), '..', 'data', 'processed')
+os.makedirs(csv_dir, exist_ok=True)
+csv_path = os.path.join(csv_dir, 'aclImdb_reviews_raw_extracted.csv')
 with open(csv_path, 'w', newline='', encoding='utf-8') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(['label', 'text', 'rating'])
