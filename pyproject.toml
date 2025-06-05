@@ -95,14 +95,15 @@ xattr = "1.1.4"
 zipp = "3.22.0"
 zstandard = "0.23.0"
 
-[tool.poetry.dev-dependencies]
-
 
 [tool.poetry.scripts]
 test = "pytest"
-lint = "flake8 src"
+
+[tool.poetry.plugins."console_scripts"]
+lint = "flake8:main"
 
 [tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
 
 
 [build-system]

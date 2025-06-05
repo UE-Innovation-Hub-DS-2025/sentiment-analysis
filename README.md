@@ -30,33 +30,33 @@ You can install all required dependencies using either `pip` or `poetry`:
 
 - **Extract and aggregate IMDB reviews:**
   ```bash
-  python src/pipeline-utils.py
+  poetry run python src/pipeline-utils.py
   ```
 - **Jupyter Notebook for exploration:**
   ```bash
-  jupyter notebook src/sentinment-analysis.ipynb
+  poetry run jupyter notebook src/sentinment-analysis.ipynb
   ```
 
 ### Run Tests
 
 - **With pytest (recommended):**
   ```bash
-  pytest
+  poetry run pytest
   ```
-- **With poetry:**
+- **With Makefile (if available):**
   ```bash
-  poetry run test
+  make test
   ```
 
 ### Run Lint
 
 - **With flake8:**
   ```bash
-  flake8 src
+  poetry run flake8 src
   ```
-- **With poetry:**
+- **With Makefile (if available):**
   ```bash
-  poetry run lint
+  make lint
   ```
 
 ### Install a New Dependency
@@ -70,6 +70,8 @@ You can install all required dependencies using either `pip` or `poetry`:
   ```bash
   poetry add <package-name>
   ```
+
+A `Makefile` is provided for convenience. If you have `make` installed, you can use `make lint` and `make test` as shortcuts for linting and testing.
 
 Refer to this section whenever you need to set up, test, lint, or extend the project.
 
