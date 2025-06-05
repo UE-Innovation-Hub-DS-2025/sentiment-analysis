@@ -94,10 +94,14 @@ wcwidth = "0.2.13"
 xattr = "1.1.4"
 zipp = "3.22.0"
 zstandard = "0.23.0"
+scikit-learn = "^1.6.1"
+nltk = "^3.9.1"
 
 
 [tool.poetry.scripts]
 test = "pytest"
+extract = "modules.pipeline.extract"
+transform = "modules.pipeline.transform"
 
 [tool.poetry.plugins."console_scripts"]
 lint = "flake8:main"
