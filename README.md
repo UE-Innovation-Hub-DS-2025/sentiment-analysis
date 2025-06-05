@@ -4,6 +4,75 @@
 
 This project performs sentiment analysis on the IMDB Large Movie Review Dataset. The goal is to classify movie reviews as either positive or negative using machine learning techniques. The project includes data extraction, preprocessing, and preparation for model training and evaluation.
 
+## Setup & Project Commands
+
+Before running any scripts, it is recommended to create a Python virtual environment to isolate dependencies:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+```
+
+### Install Dependencies
+
+You can install all required dependencies using either `pip` or `poetry`:
+
+- **With pip:**
+  ```bash
+  pip install -r requirements.txt
+  ```
+- **With poetry:**
+  ```bash
+  poetry install
+  ```
+
+### Run Scripts
+
+- **Extract and aggregate IMDB reviews:**
+  ```bash
+  python src/pipeline-utils.py
+  ```
+- **Jupyter Notebook for exploration:**
+  ```bash
+  jupyter notebook src/sentinment-analysis.ipynb
+  ```
+
+### Run Tests
+
+- **With pytest (recommended):**
+  ```bash
+  pytest
+  ```
+- **With poetry:**
+  ```bash
+  poetry run test
+  ```
+
+### Run Lint
+
+- **With flake8:**
+  ```bash
+  flake8 src
+  ```
+- **With poetry:**
+  ```bash
+  poetry run lint
+  ```
+
+### Install a New Dependency
+
+- **With pip:**
+  ```bash
+  pip install <package-name>
+  pip freeze > requirements.txt  # Update requirements.txt
+  ```
+- **With poetry:**
+  ```bash
+  poetry add <package-name>
+  ```
+
+Refer to this section whenever you need to set up, test, lint, or extend the project.
+
 ## Dataset
 
 The dataset used is the [Large Movie Review Dataset v1.0](https://ai.stanford.edu/~amaas/data/sentiment/), which contains 50,000 labeled reviews (25,000 for training and 25,000 for testing) and 50,000 unlabeled reviews for unsupervised learning. Reviews are split into positive and negative categories, and each review is stored as a text file with its sentiment label and rating encoded in the filename.
