@@ -17,7 +17,7 @@ The dataset used is the [Large Movie Review Dataset v1.0](https://ai.stanford.ed
 
 The main data pipeline is implemented in `src/pipeline-utils.py`:
 
-- Extracts text and ratings from the dataset folders (`pos` and `neg` for both train and test sets).
+- Extracts text and ratings from the dataset folders (`pos` and `neg` for both train and test sets), assuming the IMDB dataset is already extracted and available in the expected directory structure.
 - Assigns sentiment labels based on folder (positive/negative).
 - Aggregates all data into a single CSV file (`aclImdb_reviews.csv`) with columns: `label`, `text`, and `rating`.
 - Logging is used to track extraction and saving progress.
@@ -26,9 +26,12 @@ A Jupyter notebook (`sentinment-analysis.ipynb`) is provided for further data ex
 
 ## Usage
 
-1. **Extract Data:**
-   - Run the script in `src/pipeline-utils.py` to extract and aggregate the raw IMDB reviews into a CSV file.
-2. **Explore and Model:**
+1. **Prepare Data:**
+   - Download and extract the IMDB dataset from the [official source](https://ai.stanford.edu/~amaas/data/sentiment/) if you have not already done so.
+   - Place the extracted dataset in the `raw_data/aclImdb/` directory so that the folder structure matches what the pipeline expects.
+2. **Extract Data:**
+   - Run the script in `src/pipeline-utils.py` to extract and aggregate the raw IMDB reviews into a CSV file. The script will process the data in place and does not scan for or download the dataset itself.
+3. **Explore and Model:**
    - Use the Jupyter notebook to load the CSV, preprocess the data, and experiment with sentiment classification models.
 
 ## Dependencies
@@ -46,7 +49,7 @@ pip install pandas numpy
 ## Notes
 
 - The raw dataset is large; ensure you have sufficient disk space and memory.
-- The project structure assumes the IMDB dataset is extracted under `raw_data/aclImdb/`.
+- The project structure assumes the IMDB dataset is extracted under `raw_data/aclImdb/` before running any scripts. The pipeline does not scan for or download the dataset automatically.
 - For more details on the dataset, see the included dataset README in `raw_data/aclImdb/README`.
 
 ## Citation
