@@ -54,3 +54,9 @@ pip install pandas numpy
 If you use this dataset or project, please cite:
 
 Maas, Andrew L. et al. (2011). "Learning Word Vectors for Sentiment Analysis." Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies, pp. 142–150.
+
+## Contributors
+
+- [Abbas](https://github.com/abbasatayee)
+
+See the [GitHub contributors graph](../../graphs/contributors) for everyone who has contributed to this project.
